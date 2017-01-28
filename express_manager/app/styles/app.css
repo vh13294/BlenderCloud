@@ -1,0 +1,13 @@
+productSliderSectionhtml, body {
+      font-family: "proxima-nova",sans-serif;
+  font-size:12px !important;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+.pageContent{
+  width:100%;
+  flex: 1;
+}

@@ -1,0 +1,142 @@
+body{
+}
+.job_list{
+  width:100%;
+  min-height:85%;
+  max-height:85%;
+}
+
+.job_details{
+  width:50%;
+  height:100%;
+}
+
+.overview{
+  width:100%;
+  height:100%;
+}
+.top_section{
+  width:100%;
+  padding:10px;
+  background: #f9f9f9;
+  border-bottom:2px solid #ccc;
+}
+.job_filter{
+  margin-left:10px;
+  margin-right:10px;
+}
+.jobs{
+  width:50%;
+  height:100%;
+  display:block;
+  border-right:3px solid #ccc;
+  overflow:auto;
+}
+
+.jobs_table{
+  width:100%;
+}
+.percentage{
+  color:#d3d3d3;
+}
+ td{
+   padding:10px;
+ }
+ input{
+   margin: 0px 5px 0px 5px !important;
+ }
+.active_row{
+  background:#414141 !important;
+  color:white;
+}
+
+.jobRow:nth-child(even){
+   background:#f9f9f9;
+}
+.jobRow{
+  padding:5px;
+  border-top:1px solid #dddddd;
+  border-bottom:1px solid #dddddd;
+  cursor:pointer;
+}
+ table {
+   border-collapse: collapse;
+ }
+.action{
+  width:20%;
+}
+.remove_job{
+  cursor:pointer;
+}
+
+.ng-leave {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity:1;
+}
+.ng-leave-active {
+  opacity:0;
+}
+.ng-enter-active {
+  opacity:0;
+}
+.ng-enter {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity:1;
+}
+.downloadSection{
+	height:10%;
+	
+}
+/********************************************Job progress section *********************************************/
+
+.progressWrapper{
+  width:100%;
+  padding:10px;
+}
+.upperSection{
+  display:block;
+  overflow:auto;
+  width:100%;
+  border-bottom: 3px solid #ccc;
+}
+.lowerSection{
+  overflow:auto;
+}
+.progressSection{
+  height:100%;
+}
+.progress{
+  margin:0 !important;
+}
+.progressHolder{
+  margin-left:20px;
+}
+.job_settings{
+  background: #f9f9f9;
+  margin-left:10px;
+}
+.machine_row{
+  padding:10px;
+}
+
+
+
+/****************************************Lower section - task ***********************************/
+
+.task_title_row{
+  background:#f9f9f9;
+  border-bottom:1px solid #ccc;
+  padding:5px;
+}
+.task_list{
+  overflow:auto;
+}
+.task_row:nth-child(even){
+   background:#f9f9f9;
+}
+.no_jobs_message{
+  text-align: center;
+  padding:5px;
+}

@@ -1,0 +1,59 @@
+.gridItem{
+  width:100%;
+}
+md-dialog{
+  width:80%;
+}
+.cartList{
+  width:90%;
+}
+.productPageContent{
+  width:90%;
+}
+.productPageImageSliderSection{
+  width:100%;
+  float:left;
+}
+.productPageInformationSection{
+  width:100%;
+  float:left;
+}
+.myAccountCentralWrapper{
+  width:90%;
+}
+.signUpWrapper{
+  width:90%;
+}
+.signUpWrapper>div{
+  width:100%;
+}md-dialog{
+    width:90% !important;
+}.imageSlideShowSection, .productInformationSection{
+    width:100% !important;
+}
+.siteInformation{
+  width:100%;
+}
+.siteInformationElement{
+  width:100%;
+}
+.imageSlideShow{
+  display:none;
+}
+.imageSlideShowMobile{
+  display:inline;
+}
+.slideBannerMobile{
+  max-width:100%;
+  max-height:100%;
+}
+.productSliderSection{
+  width:100%;
+}
+.cartRow div{
+  width:100%;
+  margin:.5rem;
+}
+.cartProductName{
+  text-align:center;
+}

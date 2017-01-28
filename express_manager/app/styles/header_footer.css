@@ -1,0 +1,47 @@
+.logoContainer{
+  width:200px;
+  height:100%;
+  margin-left:50px;
+}
+.headerContainer{
+  background:#414141;
+  color:white;
+  height:50px;
+}
+
+/**************************footer*************************************/
+
+.footer{
+  width:100%;
+  background-color: #414141;
+}
+.footerLinks{
+  width:100%;
+  color:#BDC2CD;
+}
+.footerLinks a{
+  text-decoration: none;
+  padding:1%;
+}
+.footerLinks a:hover{
+  color:white;
+}
+a{
+  font-family: "proxima-nova",sans-serif !important;
+  color:#BDC2CD;
+  font-weight: lighter;
+}
+a:hover{
+  color:#ffffff;
+}
+.single-item{
+  width:40%;
+}
+
+.finalMessage{
+  color:#BDC2CD;
+  font-size: 14px;
+  width:100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}

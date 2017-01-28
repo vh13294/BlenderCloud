@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+	<head>
+
+
+		<meta charset="utf-8">
+		<!--<base href="/" />-->
+		<!--This is important for routing to work-->
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+		<link rel="stylesheet" href="styles/app.css"/>
+
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	</head>
+	<body ng-app="blenderFarm" ng-cloak>
+    <div ng-include = "'views/header.html'"></div>
+		<div ng-view class = "pageContent">
+		</div>
+
+		<div class = "footerInclude" ng-include = "'views/footer.html'"></div>
+		
+		<script src='/socket.io/socket.io.js'></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.js"></script>
+		<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.3.1.js"></script>
+
+		<!-- Angular Material Library -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+		<script src = "angular-socket-io-master/socket.js"></script>
+
+		<script src="js/app.js"></script>
+		<script src = "js/services/socketFactory.js"></script>
+		<script src="js/controllers/panel.js"></script>
+
+
+	</body>
+</html>

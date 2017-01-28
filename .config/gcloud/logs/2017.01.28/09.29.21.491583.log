@@ -1,0 +1,569 @@
+2017-01-28 09:29:21,498 DEBUG    root            Loaded Command Group: ['gcloud', 'compute']
+2017-01-28 09:29:21,500 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'instances']
+2017-01-28 09:29:21,532 DEBUG    root            Loaded Command Group: ['gcloud', 'compute', 'instances', 'list']
+2017-01-28 09:29:21,536 DEBUG    root            Running gcloud.compute.instances.list with Namespace(__calliope_internal_deepest_parser=ArgumentParser(prog='gcloud.compute.instances.list', usage=None, description='List Google Compute Engine virtual machine instances.', version=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=False), account=None, authority_selector=None, authorization_token_file=None, calliope_command=<googlecloudsdk.calliope.backend.Command object at 0x7f3a86f36690>, command_path=['gcloud', 'compute', 'instances', 'list'], configuration=None, credential_file_override=None, document=None, filter=None, flatten=None, format='json', h=None, help=None, http_timeout=None, limit=None, log_http=None, names=[], page_size=None, project=None, quiet=None, regexp=None, sort_by=None, trace_email=None, trace_log=None, trace_token=None, uri=False, user_output_enabled=None, verbosity='warning', version=None, zones=[]).
+2017-01-28 09:29:21,538 INFO     root            Display format "
+          table(
+            name,
+            zone.basename(),
+            machineType.machine_type(),
+            scheduling.preemptible.yesno(yes=true, no=''),
+            networkInterfaces[].networkIP.notnull().list():label=INTERNAL_IP,
+            networkInterfaces[].accessConfigs[0].natIP.notnull().list()            :label=EXTERNAL_IP,
+            status
+          )
+         json".
+2017-01-28 09:29:21,613 DEBUG    root            Starting batch request...
+2017-01-28 09:29:21,613 DEBUG    root            Adding request: (<googlecloudsdk.third_party.apis.compute.v1.compute_v1_client.InstancesService object at 0x7f3a86b137d0>, 'AggregatedList', <ComputeInstancesAggregatedListRequest
+ maxResults: 500
+ project: 'corded-keel-151213'>)
+2017-01-28 09:29:21,614 DEBUG    root            Making batch request...
+2017-01-28 09:29:21,908 DEBUG    root            Batch request done; responses [<InstanceAggregatedList
+ id: u'projects/corded-keel-151213/aggregated/instances'
+ items: <ItemsValue
+ additionalProperties: [<AdditionalProperty
+ key: u'zones/asia-east1-c'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-east1-c'>]
+ message: u"There are no results for scope 'zones/asia-east1-c' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-central1-f'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-central1-f'>]
+ message: u"There are no results for scope 'zones/us-central1-f' on this page.">>>, <AdditionalProperty
+ key: u'zones/europe-west1-d'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/europe-west1-d'>]
+ message: u"There are no results for scope 'zones/europe-west1-d' on this page.">>>, <AdditionalProperty
+ key: u'zones/asia-east1-a'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-east1-a'>]
+ message: u"There are no results for scope 'zones/asia-east1-a' on this page.">>>, <AdditionalProperty
+ key: u'zones/asia-east1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-east1-b'>]
+ message: u"There are no results for scope 'zones/asia-east1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-east1-c'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-east1-c'>]
+ message: u"There are no results for scope 'zones/us-east1-c' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-west1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-west1-b'>]
+ message: u"There are no results for scope 'zones/us-west1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/europe-west1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/europe-west1-b'>]
+ message: u"There are no results for scope 'zones/europe-west1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/europe-west1-c'
+ value: <InstancesScopedList
+ instances: [<Instance
+ canIpForward: False
+ cpuPlatform: u'Intel Ivy Bridge'
+ creationTimestamp: u'2016-12-01T05:41:25.536-08:00'
+ description: u''
+ disks: [<AttachedDisk
+ autoDelete: True
+ boot: True
+ deviceName: u'blender-manager'
+ index: 0
+ interface: InterfaceValueValuesEnum(SCSI, 1)
+ kind: u'compute#attachedDisk'
+ licenses: [u'https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1404-trusty']
+ mode: ModeValueValuesEnum(READ_WRITE, 1)
+ source: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/disks/blender-manager'
+ type: TypeValueValuesEnum(PERSISTENT, 0)>]
+ id: 2361594190945425002
+ kind: u'compute#instance'
+ machineType: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/machineTypes/n1-standard-1'
+ metadata: <Metadata
+ fingerprint: '\x13\xda,\xaf\xd0D\xaa\x8c'
+ items: [<ItemsValueListEntry
+ key: u'startup-script'
+ value: u'#! /bin/bash\nrm -rf /home/projectcloudbristol/.config/gcloud/logs/*\n'>]
+ kind: u'compute#metadata'>
+ name: u'blender-manager'
+ networkInterfaces: [<NetworkInterface
+ accessConfigs: [<AccessConfig
+ kind: u'compute#accessConfig'
+ name: u'External NAT'
+ natIP: u'104.199.94.139'
+ type: TypeValueValuesEnum(ONE_TO_ONE_NAT, 0)>]
+ name: u'nic0'
+ network: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/global/networks/default'
+ networkIP: u'10.132.0.2'
+ subnetwork: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/regions/europe-west1/subnetworks/default'>]
+ scheduling: <Scheduling
+ automaticRestart: True
+ onHostMaintenance: OnHostMaintenanceValueValuesEnum(MIGRATE, 0)
+ preemptible: False>
+ selfLink: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/instances/blender-manager'
+ serviceAccounts: [<ServiceAccount
+ email: u'304034796277-compute@developer.gserviceaccount.com'
+ scopes: [u'https://www.googleapis.com/auth/cloud-platform']>]
+ status: StatusValueValuesEnum(RUNNING, 1)
+ tags: <Tags
+ fingerprint: '\xea\xc9\x9c\xe1\x1e\x1d\xdf\xd2'
+ items: [u'http-server', u'https-server']>
+ zone: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c'>, <Instance
+ canIpForward: False
+ cpuPlatform: u'Unknown CPU Platform'
+ creationTimestamp: u'2016-12-01T05:42:56.966-08:00'
+ description: u''
+ disks: [<AttachedDisk
+ autoDelete: True
+ boot: True
+ deviceName: u'blender-worker1'
+ index: 0
+ interface: InterfaceValueValuesEnum(SCSI, 1)
+ kind: u'compute#attachedDisk'
+ licenses: [u'https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1404-trusty']
+ mode: ModeValueValuesEnum(READ_WRITE, 1)
+ source: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/disks/blender-worker1'
+ type: TypeValueValuesEnum(PERSISTENT, 0)>]
+ id: 1746518994001434127
+ kind: u'compute#instance'
+ machineType: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/machineTypes/n1-standard-1'
+ metadata: <Metadata
+ fingerprint: '\x9a\x91\xd3\xcb\xdd\xaf\xd2\xd0'
+ items: []
+ kind: u'compute#metadata'>
+ name: u'blender-worker1'
+ networkInterfaces: [<NetworkInterface
+ accessConfigs: [<AccessConfig
+ kind: u'compute#accessConfig'
+ name: u'External NAT'
+ type: TypeValueValuesEnum(ONE_TO_ONE_NAT, 0)>]
+ name: u'nic0'
+ network: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/global/networks/default'
+ networkIP: u'10.132.0.3'
+ subnetwork: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/regions/europe-west1/subnetworks/default'>]
+ scheduling: <Scheduling
+ automaticRestart: True
+ onHostMaintenance: OnHostMaintenanceValueValuesEnum(MIGRATE, 0)
+ preemptible: False>
+ selfLink: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/instances/blender-worker1'
+ serviceAccounts: [<ServiceAccount
+ email: u'304034796277-compute@developer.gserviceaccount.com'
+ scopes: [u'https://www.googleapis.com/auth/cloud-platform']>]
+ status: StatusValueValuesEnum(TERMINATED, 7)
+ tags: <Tags
+ fingerprint: '\xea\xc9\x9c\xe1\x1e\x1d\xdf\xd2'
+ items: [u'http-server', u'https-server']>
+ zone: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c'>]>>, <AdditionalProperty
+ key: u'zones/us-central1-a'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-central1-a'>]
+ message: u"There are no results for scope 'zones/us-central1-a' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-central1-c'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-central1-c'>]
+ message: u"There are no results for scope 'zones/us-central1-c' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-central1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-central1-b'>]
+ message: u"There are no results for scope 'zones/us-central1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/asia-northeast1-a'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-northeast1-a'>]
+ message: u"There are no results for scope 'zones/asia-northeast1-a' on this page.">>>, <AdditionalProperty
+ key: u'zones/asia-northeast1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-northeast1-b'>]
+ message: u"There are no results for scope 'zones/asia-northeast1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/asia-northeast1-c'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/asia-northeast1-c'>]
+ message: u"There are no results for scope 'zones/asia-northeast1-c' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-east1-b'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-east1-b'>]
+ message: u"There are no results for scope 'zones/us-east1-b' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-west1-a'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-west1-a'>]
+ message: u"There are no results for scope 'zones/us-west1-a' on this page.">>>, <AdditionalProperty
+ key: u'zones/us-east1-d'
+ value: <InstancesScopedList
+ instances: []
+ warning: <WarningValue
+ code: CodeValueValuesEnum(NO_RESULTS_ON_PAGE, 11)
+ data: [<DataValueListEntry
+ key: u'scope'
+ value: u'zones/us-east1-d'>]
+ message: u"There are no results for scope 'zones/us-east1-d' on this page.">>>]>
+ kind: u'compute#instanceAggregatedList'
+ selfLink: u'https://www.googleapis.com/compute/v1/projects/corded-keel-151213/aggregated/instances'>]
+2017-01-28 09:29:21,912 INFO     ___FILE_ONLY___ [
+  {
+2017-01-28 09:29:21,912 INFO     ___FILE_ONLY___ 
+    "canIpForward": false,
+2017-01-28 09:29:21,912 INFO     ___FILE_ONLY___ 
+    "cpuPlatform": "Intel Ivy Bridge",
+2017-01-28 09:29:21,912 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2016-12-01T05:41:25.536-08:00",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+    "description": "",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+    "disks": [
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "autoDelete": true,
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "boot": true,
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "deviceName": "blender-manager",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "index": 0,
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "interface": "SCSI",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "kind": "compute#attachedDisk",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "licenses": [
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+          "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1404-trusty"
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        ],
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "mode": "READ_WRITE",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "source": "blender-manager",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+        "type": "PERSISTENT"
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+    "id": "2361594190945425002",
+2017-01-28 09:29:21,913 INFO     ___FILE_ONLY___ 
+    "kind": "compute#instance",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+    "machineType": "n1-standard-1",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+    "metadata": {
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+      "fingerprint": "E9osr9BEqow=",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+      "items": [
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+        {
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+          "key": "startup-script",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+          "value": "#! /bin/bash\nrm -rf /home/projectcloudbristol/.config/gcloud/logs/*\n"
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+        }
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+      ],
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+      "kind": "compute#metadata"
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+    "name": "blender-manager",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+    "networkInterfaces": [
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+        "accessConfigs": [
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+          {
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+            "kind": "compute#accessConfig",
+2017-01-28 09:29:21,914 INFO     ___FILE_ONLY___ 
+            "name": "External NAT",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+            "natIP": "104.199.94.139",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+            "type": "ONE_TO_ONE_NAT"
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+          }
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        ],
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        "kind": "compute#networkInterface",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        "name": "nic0",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        "network": "default",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        "networkIP": "10.132.0.2",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+        "subnetwork": "https://www.googleapis.com/compute/v1/projects/corded-keel-151213/regions/europe-west1/subnetworks/default"
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+    "scheduling": {
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+      "automaticRestart": true,
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+      "onHostMaintenance": "MIGRATE",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+      "preemptible": false
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/instances/blender-manager",
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+    "serviceAccounts": [
+2017-01-28 09:29:21,915 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+        "email": "304034796277-compute@developer.gserviceaccount.com",
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+        "scopes": [
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+          "https://www.googleapis.com/auth/cloud-platform"
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+        ]
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+    "status": "RUNNING",
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+    "tags": {
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+      "fingerprint": "6smc4R4d39I=",
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+      "items": [
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+        "http-server",
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+        "https-server"
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+      ]
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+    "zone": "europe-west1-c"
+2017-01-28 09:29:21,916 INFO     ___FILE_ONLY___ 
+  }
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ ,
+  {
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+    "canIpForward": false,
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+    "cpuPlatform": "Unknown CPU Platform",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+    "creationTimestamp": "2016-12-01T05:42:56.966-08:00",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+    "description": "",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+    "disks": [
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "autoDelete": true,
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "boot": true,
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "deviceName": "blender-worker1",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "index": 0,
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "interface": "SCSI",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "kind": "compute#attachedDisk",
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        "licenses": [
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+          "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/licenses/ubuntu-1404-trusty"
+2017-01-28 09:29:21,922 INFO     ___FILE_ONLY___ 
+        ],
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+        "mode": "READ_WRITE",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+        "source": "blender-worker1",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+        "type": "PERSISTENT"
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "id": "1746518994001434127",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "kind": "compute#instance",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "machineType": "n1-standard-1",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "metadata": {
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+      "fingerprint": "mpHTy92v0tA=",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+      "kind": "compute#metadata"
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "name": "blender-worker1",
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+    "networkInterfaces": [
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+        "accessConfigs": [
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+          {
+2017-01-28 09:29:21,923 INFO     ___FILE_ONLY___ 
+            "kind": "compute#accessConfig",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+            "name": "External NAT",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+            "type": "ONE_TO_ONE_NAT"
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+          }
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        ],
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        "kind": "compute#networkInterface",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        "name": "nic0",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        "network": "default",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        "networkIP": "10.132.0.3",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+        "subnetwork": "https://www.googleapis.com/compute/v1/projects/corded-keel-151213/regions/europe-west1/subnetworks/default"
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+    "scheduling": {
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+      "automaticRestart": true,
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+      "onHostMaintenance": "MIGRATE",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+      "preemptible": false
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/corded-keel-151213/zones/europe-west1-c/instances/blender-worker1",
+2017-01-28 09:29:21,924 INFO     ___FILE_ONLY___ 
+    "serviceAccounts": [
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+      {
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+        "email": "304034796277-compute@developer.gserviceaccount.com",
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+        "scopes": [
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+          "https://www.googleapis.com/auth/cloud-platform"
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+        ]
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+      }
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+    ],
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+    "status": "TERMINATED",
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+    "tags": {
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+      "fingerprint": "6smc4R4d39I=",
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+      "items": [
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+        "http-server",
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+        "https-server"
+2017-01-28 09:29:21,925 INFO     ___FILE_ONLY___ 
+      ]
+2017-01-28 09:29:21,926 INFO     ___FILE_ONLY___ 
+    },
+2017-01-28 09:29:21,926 INFO     ___FILE_ONLY___ 
+    "zone": "europe-west1-c"
+2017-01-28 09:29:21,926 INFO     ___FILE_ONLY___ 
+  }
+2017-01-28 09:29:21,932 INFO     ___FILE_ONLY___ 
+]
+
+2017-01-28 09:29:21,943 DEBUG    root            Metrics reporting process started...

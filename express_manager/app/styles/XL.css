@@ -1,0 +1,31 @@
+.gridItem{
+  width:20%;
+
+}
+md-dialog{
+  width:50%;
+}
+.cartList{
+  width:50%;
+}
+.productPageContent{
+  width:60%;
+}
+.myAccountCentralWrapper{
+  width:60%;
+}
+.signUpWrapper{
+  width:50%;
+}
+.siteInformation{
+  width:50%;
+}
+.siteInformationElement{
+  width:33%;
+}
+.imageSlideShow{
+  display:inline;
+}
+.imageSlideShowMobile{
+  display:none;
+}

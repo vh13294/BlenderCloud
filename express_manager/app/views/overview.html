@@ -1,0 +1,129 @@
+<head>
+    <link rel = "stylesheet" href="styles/overview.css"/>
+</head>
+
+<div ng-controller = "panelCtrl" class = "overview" layout = "row">
+  <div class = "jobs">
+    <div class = "top_section" layout = "row" layout-align = "none center">
+      <div>Jobs {{data}}</div>
+      <span flex></span>
+      <div class = "job_filter" layout = "row" layout-align = "none center">
+        <input type="checkbox" ng-change = "updateVisible()" ng-model = "completed"/>
+        <span>Show completed</span>
+      </div>
+    </div>
+  	<div class = "job_list" layout = "row" layout-align = "center start">
+      <div class = "table">
+        <div class = "jobRow" style = "width:100%;" layout = "row" class = "title_row">
+          <div flex = 25>Job name</div>
+          <div flex = 25>Job ID</div>
+          <div flex = 25>Status</div>
+          <div flex = 25 class = "action">Action</div>
+        </div>
+        <div class = "no_jobs_message" ng-show="visible_jobs.length == 0">
+            No jobs to be seen here
+        </div>
+        <div  ng-click = "changeActiveJob($index)" ng-class = "{'active_row': job.active}" ng-repeat = 'job in visible_jobs' class = "jobRow"  style = "width:100%;" layout = "row" class = "title_row">
+          <div flex = 25>{{job.name}}</div>
+          <div flex = 25>{{job.priority}}</div>
+          <div flex = 25>{{job.status}}</div>
+          <div flex = 25 class = "action">
+            <div  ng-show = job.complete  class = "remove_job" layout = "row" layout-align = "start center">
+				<span>no actions</span>
+			</div>
+			<div  ng-hide = job.complete ng-click = "killJob($index)" class = "remove_job" layout = "row" layout-align = "start center">
+              <img src = "assets/svg/exit.svg" style = "width:10px; margin-right:10px;"/>
+              <span>Kill process</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   </div>
+	<div layout = "row"  layout-align = "start center" class = "downloadSection">
+		<div flex = 50 layout = "row" layout-align = "center center">
+			<md-button class="md-raised" target = "_self"  href="/cloudplugin.py" download = "cloudRender.py">Download plugin</md-button>
+		</div>
+		<div flex = 50 layout = "row" layout-align = "center center">
+			<md-progress-circular md-mode="indeterminate" ng-hide = "hide_zipping" ></md-progress-circular>
+			<md-button ng-disabled =complete  ng-hide = "hide_zip" ng-click = zipProject()  class="md-raised">zip images</md-button>
+			<md-button ng-hide = "hide_download" target = "_self" href = "/project.zip"  class="md-raised">Download images</md-button>
+		</div>
+	</div>
+	</div>
+	<div class = "job_details">
+    <div class = "top_section" layout = "row" layout-align = "none center">
+      <div>Job details</div>
+      <span flex></span>
+      <div>Job ID : 12345 </div>
+    </div>
+    <div class = "progressSection" layout = "column" ng-click = "updateProgress()">
+
+      <!------------------------------------upper section---------------------------->
+      <div class = "upperSection" layout = "column" flex = 30>
+        <div class = "progressWrapper" layout = "row"  layout-align="start center">
+          <span> Upload </span>
+          <div class = "progressHolder" style = "width:100%; height:100%;" layout = "row"  layout-align="center center">
+            <uib-progressbar max="100" value="visible_jobs[active_index].upload_progress" style = "width:100%;">
+              <span>{{visible_jobs[active_index].upload_progress}}%</span>
+            </uib-progressbar>
+          </div>        </div>
+        <div class = "progressWrapper" layout = "row"  layout-align="start center">
+          <span> Render </span>
+          <div class = "progressHolder" style = "width:100%; height:100%;" layout = "row"  layout-align="center center">
+            <uib-progressbar max="100" value="visible_jobs[active_index].progress" style = "width:100%;">
+              <span>{{visible_jobs[active_index].progress}}%</span>
+            </uib-progressbar>
+          </div>
+        </div>
+
+        
+
+        <div layout = "column" class = "job_settings">
+          <div layout = "row">
+            <span>Render engine: {{visible_jobs[active_index].settings.render_engine}}</span>
+          </div>
+          <div layout = "row">
+            <span>Frame range: {{visible_jobs[active_index].settings.first_frame}} - {{job_list[active_index].settings.last_frame}} </span>
+          </div>
+          <div layout = "row">
+            <span>Chunk size: {{visible_jobs[active_index].settings.chunk_size1}}</span>
+          </div>
+          <div layout = "row">
+            <span>Number of machines: {{visible_jobs[active_index].settings.no_of_machines}}</span>
+          </div>
+          <div layout = "row">
+            <span>Image format: {{visible_jobs[active_index].settings.format}}</span>
+          </div>
+        </div>
+
+      </div>
+      <!----------------------------------------------------------------------------->
+
+
+      <div class = "lowerSection" layout = "column" flex = 70>
+        <div class = "task_title_row" layout = "row">
+          <span> Tasks</span>
+          <span flex></span>
+          <span></span>
+        </div>
+        <div class = "task_list">
+          <div class = "task_row" layout = "row">
+            <span flex = 20>ID</span>
+            <span flex = 20>Frames</span>
+            <span flex = 20>Status</span>
+            <span flex = 20>Progress</span>
+            <span flex = 20>Elapsed time</span>
+          </div>
+          <div class = "task_row" layout = "row" ng-repeat = "task in visible_tasks">
+            <span flex = 20>{{task.IP}}</span>
+            <span flex = 20>{{task.frames}}</span>
+            <span flex = 20>{{task.status}}</span>
+            <span flex = 20>{{task.progress}} %</span>
+            <span flex = 20>{{task.formatted}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
