@@ -12,44 +12,11 @@ The manager handles all communication between the user and
 the cloud as well as ‘farming’ out work to the worker
 instances. A full list of what the manager is responsible for, as
 detailed in figure 7, is detailed below:
-● Retrieving the job configurations submitted by the
-user
-● Retrieving the scene to be rendered in the form of a
-packed blend file
-● Store the blend file in the GCS bucket to be accessed
-by worker instances
-● Creating worker instances using an instance template
-image
-● Distributing work between the workers and
-constructing each worker’s render command
-● Keeping track of the progress of each task to be fed to
-the front end as well as detect failures in the system
-● Processing a chunk of the render itself, rather than
-wasting the virtual instance
-● Serving a zipped version of the rendered images to
-the user
-Figure 3: high-level overview of data flow through our cloud
-system
-D. Life cycle of workers
-When the manager creates the worker instances a number
-of startup scripts are run on the workers, readying them for
-processing. What the workers have to do, as outlined in figure
-3, is outlined in list form below:
-● Worker instances are created from an instance
-template image, which has all the required programs
-and dependencies installed
-● Workers have to create a connection with the GCS
-bucket to ensure access to the blend file to be
-rendered as well as output the rendered images.
-● Other low-level startup tasks are processed, for
-example, acquiring the instances internal IP address
-for identification when communicating between
-instances
-● Task is received from the manager via HTTP request
-using internal IP address, offering ultra low latency
-● Task is executed, running a python script that reports
-back to the manager the current status of the machine
-and the progress of the render over a socket.io listen
-server
-● Once the task has been processed the worker will
-report to the manager and terminate itself
+● Retrieving the job configurations submitted by the user
+● Retrieving the scene to be rendered in the form of a packed blend file
+● Store the blend file in the GCS bucket to be accessed by worker instances
+● Creating worker instances using an instance template image
+● Distributing work between the workers and constructing each worker’s render command
+● Keeping track of the progress of each task to be fed to the front end as well as detect failures in the system
+● Processing a chunk of the render itself, rather than wasting the virtual instance
+● Serving a zipped version of the rendered images to the user
