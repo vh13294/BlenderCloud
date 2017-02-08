@@ -1,25 +1,24 @@
 BlenderCloud Google Compute Engine
 
-Abstract— This paper outlines blenderCloud, a blender 3D
-plugin and render farm service that uses Google Compute Engine
-to provide users with a fully customizable and scalable solution to
-animation rendering and simulation baking. A series of screenshot
-instructions can be downloaded from safe. blenderCloud has a web
-console where the job progress and its detail can be monitored
+Abstract— This paper outlines blenderCloud, a blender 3D plugin and render farm service that uses Google Compute Engine to provide users with a fully customizable and scalable solution to animation rendering and simulation baking. A series of screenshot instructions can be downloaded from safe. blenderCloud has a web console where the job progress and its detail can be monitored
 
 
 ![alt tag](https://raw.githubusercontent.com/vh13294/BlenderCloud/master/Diagram.png)
 
-The manager plays an important role in our cloud system.
-The manager handles all communication between the user and
-the cloud as well as ‘farming’ out work to the worker
-instances. A full list of what the manager is responsible for, as
-detailed in figure 7, is detailed below:
+The manager plays an important role in our cloud system. The manager handles all communication between the user and the cloud as well as ‘farming’ out work to the worker instances. 
+
 ● Retrieving the job configurations submitted by the user
+
 ● Retrieving the scene to be rendered in the form of a packed blend file
+
 ● Store the blend file in the GCS bucket to be accessed by worker instances
+
 ● Creating worker instances using an instance template image
+
 ● Distributing work between the workers and constructing each worker’s render command
+
 ● Keeping track of the progress of each task to be fed to the front end as well as detect failures in the system
+
 ● Processing a chunk of the render itself, rather than wasting the virtual instance
+
 ● Serving a zipped version of the rendered images to the user
