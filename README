@@ -7,6 +7,9 @@ animation rendering and simulation baking. A series of screenshot
 instructions can be downloaded from safe. blenderCloud has a web
 console where the job progress and its detail can be monitored
 
+
+![alt tag](https://raw.githubusercontent.com/vh13294/BlenderCloud/master/Diagram.png)
+
 The manager plays an important role in our cloud system.
 The manager handles all communication between the user and
 the cloud as well as ‘farming’ out work to the worker
