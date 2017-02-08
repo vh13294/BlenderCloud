@@ -5,6 +5,9 @@ Abstract— This paper outlines blenderCloud, a blender 3D plugin and render far
 
 ![alt tag](https://raw.githubusercontent.com/vh13294/BlenderCloud/master/Diagram.png)
 
+BlenderCloud/report.pdf
+BlenderCloud/instruction.pdf
+
 The manager plays an important role in our cloud system. The manager handles all communication between the user and the cloud as well as ‘farming’ out work to the worker instances. 
 
 ● Retrieving the job configurations submitted by the user
